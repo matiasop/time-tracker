@@ -35,6 +35,26 @@ class TimeTracker:
         with open(self.filename, "a") as logfile:
             logfile.write(window_name + "\n")
 
+    def json_cleanup(self, threshold=300):
+        # Deletes all data entries with less than [threshold] seconds
+        with open(self.json_results, "r") as json_file:
+            try:
+                self.data = json.load(json_file)
+            except TypeError:
+                print("Error while reading JSON file")
+
+        to_be_deleted = []
+        for item in self.data:
+            if self.data[item] <= threshold:
+                to_be_deleted.append(item)
+
+        for item in to_be_deleted:
+            self.data.pop(item)
+
+        # Write data to JSON file
+        with open(self.json_results, "w") as json_file:
+            json.dump(self.data, json_file)
+
     def analysis(self):
         # Reads the logfile and makes a json of a dictionary with the time logs
         with open(self.json_results, "r") as json_file:
@@ -73,6 +93,6 @@ class TimeTracker:
 
 if __name__ == "__main__":
    tracker = TimeTracker()
-#    tracker.analysis()
+#    tracker.json_cleanup()
    tracker.run_tracker()
     

@@ -15,3 +15,8 @@ You can also add it to startup applications so you don't have to worry about sta
 ## Output
 
 The output of this program is a .json file with the time spent on different applications. You can change where this file is saved if you modifify the filenames in the begining of the program.
+
+## Cleanup
+
+In case the json file has to much data, you can delete part of if by running the `json_cleanup` method.
+
