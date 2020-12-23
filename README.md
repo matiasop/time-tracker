@@ -8,6 +8,8 @@ This python program automatically tracks the time spent on different application
 
 `python timetracker.py`
 
+You need to have installed `xdotool`
+
 You can also add it to startup applications so you don't have to worry about starting the program
 
 ## Output
