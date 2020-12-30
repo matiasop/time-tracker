@@ -12,7 +12,7 @@ class TimeTracker:
         self.max_counter = 10 # Maximum number of lines before the logfile is cleaned
         self.data = {} # Dictionary with the results of the analysis
         # List of common programs
-        self.regex_match = re.compile(r"- Code -|- Mousepad|— Mozilla Firefox|Terminal -|- File Manager|Zoom")
+        self.regex_match = re.compile(r"- Code -|- Mousepad|— Mozilla Firefox|Terminal -|- File Manager|Zoom|Discord|Krita|- mpv")
 
     def get_window_name(self):
         # Get active window name
